@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/LearnLingo-project/static/css/main.7acaea2f.css",
-    "main.js": "/LearnLingo-project/static/js/main.e5586da4.js",
-    "index.html": "/LearnLingo-project/index.html",
-    "main.7acaea2f.css.map": "/LearnLingo-project/static/css/main.7acaea2f.css.map",
-    "main.e5586da4.js.map": "/LearnLingo-project/static/js/main.e5586da4.js.map"
+    "main.css": "/CarRent-project/static/css/main.448dfa6a.css",
+    "main.js": "/CarRent-project/static/js/main.d66e569a.js",
+    "static/media/Montserrat-SemiBold.ttf": "/CarRent-project/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
+    "static/media/Montserrat-Regular.ttf": "/CarRent-project/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
+    "static/media/Manrope-SemiBold.ttf": "/CarRent-project/static/media/Manrope-SemiBold.310f108cc524df0e5ffc.ttf",
+    "static/media/Manrope-Medium.ttf": "/CarRent-project/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
+    "static/media/Manrope-Regular.ttf": "/CarRent-project/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
+    "index.html": "/CarRent-project/index.html",
+    "main.448dfa6a.css.map": "/CarRent-project/static/css/main.448dfa6a.css.map",
+    "main.d66e569a.js.map": "/CarRent-project/static/js/main.d66e569a.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.e5586da4.js"
+    "static/css/main.448dfa6a.css",
+    "static/js/main.d66e569a.js"
   ]
 }
