@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-export const LogoLink = styled(NavLink)`
+export const NavigationLink = styled(NavLink)`
   color: #121417;
   text-decoration: none;
   font-size: 1.25rem;

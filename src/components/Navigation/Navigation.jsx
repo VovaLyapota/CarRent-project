@@ -1,14 +1,11 @@
-import { NavLink } from 'react-router-dom';
-import { LogoLink } from './Navigation.styled';
-import logo from '../../images/logo.svg';
+import { NavigationLink } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
-    <>
-      <LogoLink to="/">
-        <img width="28px" height="28px" src={logo} alt="logo" />
-        LearnLingo
-      </LogoLink>
-    </>
+    <nav>
+      <NavigationLink to="/">Home</NavigationLink>
+      <NavigationLink to="/">Home</NavigationLink>
+      <NavigationLink to="/">Home</NavigationLink>
+    </nav>
   );
 };

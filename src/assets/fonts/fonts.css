@@ -1,16 +1,21 @@
 @font-face {
-  font-family: 'Roboto';
-  src: local('Roboto'), url('./Roboto-Regular.ttf') format('ttf');
+  font-family: 'Manrope';
+  src: local('ManropeRegular'), url('./Manrope-Regular.ttf') format('ttf');
 }
 @font-face {
-  font-family: 'RobotoItalic';
-  src: local('RobotoItalic'), url('./Roboto-Italic.ttf') format('ttf');
+  font-family: 'ManropeMedium';
+  src: local('ManropeMedium'), url('./Manrope-Medium.ttf') format('ttf');
 }
 @font-face {
-  font-family: 'RobotoMedium';
-  src: local('RobotoMedium'), url('./Roboto-Medium.ttf') format('ttf');
+  font-family: 'ManropeSemiBold';
+  src: local('ManropeSemiBold'), url('./Manrope-SemiBold.ttf') format('ttf');
 }
 @font-face {
-  font-family: 'RobotoBold';
-  src: local('RobotoBold'), url('./Roboto-Bold.ttf') format('ttf');
+  font-family: 'Montserrat';
+  src: local('MontserratRegular'), url('./Montserrat-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'MontserratSemiBold';
+  src: local('MontserratSemiBold'),
+    url('./Montserrat-SemiBold.ttf') format('ttf');
 }
