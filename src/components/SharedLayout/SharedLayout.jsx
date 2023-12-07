@@ -1,4 +1,3 @@
-import { MainContainer } from 'components/MainContainer';
 import { Navigation } from 'components/Navigation';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
@@ -14,9 +13,7 @@ export const SharedLayout = () => {
         <Suspense
         //   fallback={}
         >
-          <MainContainer>
-            <Outlet />
-          </MainContainer>
+          <Outlet />
         </Suspense>
       </main>
     </>
