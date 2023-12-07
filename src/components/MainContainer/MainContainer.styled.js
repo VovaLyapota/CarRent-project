@@ -5,5 +5,4 @@ export const MainContainer = styled.div`
   justify-content: center;
 
   margin: 0 auto;
-  padding: 0 15px;
 `;
