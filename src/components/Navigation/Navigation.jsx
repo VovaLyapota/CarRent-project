@@ -1,11 +1,24 @@
-import { NavigationLink } from './Navigation.styled';
+import {
+  NavigationLink,
+  NavigationContainer,
+  NavigationList,
+  NavigationItem,
+} from './Navigation.styled';
 
 export const Navigation = () => {
   return (
-    <nav>
-      <NavigationLink to="/">Home</NavigationLink>
-      <NavigationLink to="/">Home</NavigationLink>
-      <NavigationLink to="/">Home</NavigationLink>
-    </nav>
+    <NavigationContainer>
+      <NavigationList>
+        <NavigationItem>
+          <NavigationLink to="/">Home</NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink to="/catalog">Rent</NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink to="/favorites">Favorite</NavigationLink>
+        </NavigationItem>
+      </NavigationList>
+    </NavigationContainer>
   );
 };
