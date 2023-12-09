@@ -1,6 +1,9 @@
 @import-normalize; /* bring in normalize.css styles */
 @import './assets/fonts/fonts.css';
 
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'Manrope', 'Montserrat', sans-serif;
