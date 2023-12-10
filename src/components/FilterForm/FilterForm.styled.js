@@ -1,5 +1,13 @@
 import styled from '@emotion/styled';
-import { Field } from 'formik';
+import { Field, Form } from 'formik';
+
+export const SearchForm = styled(Form)`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 20px auto 50px;
+  gap: 18px;
+`;
 
 export const MileageInputsContainer = styled.label`
   display: flex;
@@ -57,5 +65,3 @@ export const MileageInput = styled(Field)`
         border-right: 1px solid rgba(138, 138, 137, 0.20);`
       : 'border-radius: 0px 14px 14px 0px;'}
 `;
-
-// border-right: 1px solid rgba(138, 138, 137, 0.20);

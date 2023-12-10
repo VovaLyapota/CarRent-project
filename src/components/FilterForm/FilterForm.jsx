@@ -1,21 +1,20 @@
-import { CustomSelect } from 'components/CustomSelect';
 import carBrands from '../../assets/makes.json';
-import { Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import {
   MileageInput,
   MileageInputContainer,
   MileageInputHint,
   MileageInputsContainer,
+  SearchForm,
 } from './FilterForm.styled';
 import { LabelContainer } from 'components/LabelContainer';
+import { CustomButton } from 'components/CustomButton';
+import { CustomSelect } from 'components/CustomSelect';
 
 export const FilterForm = () => {
-  const handleSubmit = () => {};
-
-  const brands = carBrands.map(brand => ({ value: brand, label: brand }));
   const prices = [];
   for (let i = 10; i <= 150; i += 10) {
-    prices.push({ value: i, label: `To ${i} $` });
+    prices.push(i);
   }
 
   return (
@@ -26,57 +25,53 @@ export const FilterForm = () => {
         minMileage: '',
         maxMileage: '',
       }}
-      onSubmit={handleSubmit}
+      onSubmit={(values, actions) => {
+        // dispatch();
+        console.log(values);
+        actions.resetForm();
+      }}
     >
-      {({
-        handleSubmit,
-        setFieldValue,
-        values: { minMileage, maxMileage },
-      }) => (
-        <Form onSubmit={handleSubmit}>
+      {({ handleSubmit, setFieldValue, values: { brand, maxTrafik } }) => (
+        <SearchForm onSubmit={handleSubmit}>
           <LabelContainer description="Car brand">
             <CustomSelect
-              options={brands}
-              defaultLable="Enter the text"
+              options={carBrands}
+              placeholder="Enter the text"
+              currentValue={brand}
               onChange={option => {
-                setFieldValue('brand', option.value);
+                setFieldValue('brand', option);
               }}
+              width={224}
             />
           </LabelContainer>
           <LabelContainer description="Price/ 1 hour">
             <CustomSelect
-              defaultLable="To $"
               options={prices}
+              placeholder="To $"
+              currentValue={maxTrafik}
               onChange={option => {
-                setFieldValue('maxTrafik', option.value);
+                setFieldValue('maxTrafik', option);
               }}
-              width={130}
+              formatOption={option => `To ${option} $`}
             />
           </LabelContainer>
           <LabelContainer
             description="Сar mileage / km"
-            adsStyles="width: 320px;"
+            adsStyles="width: 320px"
           >
             <MileageInputsContainer>
               <MileageInputContainer>
                 <MileageInputHint>From</MileageInputHint>
-                <MileageInput
-                  type="number"
-                  name="minMileage"
-                  value={minMileage}
-                />
+                <MileageInput type="number" name="minMileage" />
               </MileageInputContainer>
               <MileageInputContainer>
                 <MileageInputHint>To</MileageInputHint>
-                <MileageInput
-                  type="number"
-                  name="maxMileage"
-                  value={maxMileage}
-                />
+                <MileageInput type="number" name="maxMileage" />
               </MileageInputContainer>
             </MileageInputsContainer>
           </LabelContainer>
-        </Form>
+          <CustomButton type="submit" text="Search" adsStyles="height: 48px" />
+        </SearchForm>
       )}
     </Formik>
   );

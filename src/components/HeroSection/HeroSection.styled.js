@@ -39,7 +39,7 @@ export const HeroButton = styled(Link)`
   padding: 12px 46px;
   margin: 0 auto 36px;
 
-  width: 124px;
+  width: 210px;
   color: #fff;
   text-decoration: none;
 
@@ -50,6 +50,6 @@ export const HeroButton = styled(Link)`
 
   &:hover,
   &:focus {
-    background: #1e56d1;
+    background: #0b44cd;
   }
 `;
