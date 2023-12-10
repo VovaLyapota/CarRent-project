@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import selectIcon from '../../images/svg/selectIcon.svg';
 import {
   DropdownContainer,
+  IconContainer,
   SelectContainer,
   SelectOptionItem,
   SelectOptionsList,
@@ -52,6 +54,9 @@ export const CustomSelect = ({
         {choosePlaceholderValue()}
       </SelectPlaceholder>
 
+      <IconContainer shouldShowDropdown={shouldShowDropdown}>
+        <img width="20px" height="20px" src={selectIcon} alt="select" />
+      </IconContainer>
       <DropdownContainer optionsVisibility={shouldShowDropdown}>
         <SelectOptionsList>
           {options.map(option => (

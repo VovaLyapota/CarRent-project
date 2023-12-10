@@ -36,6 +36,17 @@ export const SelectPlaceholder = styled.p`
   line-height: 1.11;
 `;
 
+export const IconContainer = styled.div`
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%)
+    ${props => (props.shouldShowDropdown ? 'rotate(180deg)' : 'rotate(0)')};
+
+  width: 20px;
+  height: 20px;
+`;
+
 export const DropdownContainer = styled.div`
   display: ${props => (props.optionsVisibility ? 'block' : 'none')};
   position: absolute;
@@ -61,7 +72,6 @@ export const SelectOptionsList = styled.ul`
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  gap: 8px;
 
   width: 100%;
   height: 100%;
@@ -78,7 +88,8 @@ export const SelectOptionsList = styled.ul`
 
 export const SelectOptionItem = styled.li`
   width: calc(100% - 42px);
-  margi-right: 4px;
+  margin-right: 4px;
+  padding: 4px 0;
   color: rgba(18, 20, 23, 0.2);
   background-color: #fff;
 

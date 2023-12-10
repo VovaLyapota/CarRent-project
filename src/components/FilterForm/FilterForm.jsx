@@ -1,4 +1,4 @@
-import carBrands from '../../assets/makes.json';
+import carBrands from 'assets/makes.json';
 import { Formik } from 'formik';
 import {
   MileageInput,
@@ -10,12 +10,24 @@ import {
 import { LabelContainer } from 'components/LabelContainer';
 import { CustomButton } from 'components/CustomButton';
 import { CustomSelect } from 'components/CustomSelect';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAdverts } from 'reduxStore/adverts';
+import { useEffect } from 'react';
+import { selectFilters } from 'reduxStore/filter';
 
 export const FilterForm = () => {
+  const dispatch = useDispatch();
+  const filters = useSelector(selectFilters);
+
+  let page = 1;
   const prices = [];
   for (let i = 10; i <= 150; i += 10) {
     prices.push(i);
   }
+
+  useEffect(() => {
+    dispatch(fetchAdverts({ page: 1, isNewRequest: true }));
+  }, [dispatch]);
 
   return (
     <Formik
@@ -26,8 +38,11 @@ export const FilterForm = () => {
         maxMileage: '',
       }}
       onSubmit={(values, actions) => {
-        // dispatch();
-        console.log(values);
+        const { brand } = values;
+        const isNewRequest = filters.brand !== brand;
+        isNewRequest ? (page = 1) : (page += 1);
+
+        dispatch(fetchAdverts({ brand, page, isNewRequest }));
         actions.resetForm();
       }}
     >
