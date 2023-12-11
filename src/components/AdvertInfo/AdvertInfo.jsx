@@ -10,6 +10,7 @@ import { devideConditions } from 'utils/devideConditions';
 import { RentalConditionsList } from 'components/RentalConditionsList';
 import { CustomButton } from 'components/CustomButton';
 import { formatAddress } from 'utils/formatAddress';
+import numbro from 'numbro';
 
 export const AdvertInfo = ({ advertData }) => {
   const {
@@ -26,6 +27,8 @@ export const AdvertInfo = ({ advertData }) => {
     accessories,
     functionalities,
     rentalConditions,
+    mileage,
+    rentalPrice,
   } = advertData;
 
   const deckrArray = [
@@ -37,7 +40,11 @@ export const AdvertInfo = ({ advertData }) => {
     `Engine Size: ${engineSize}`,
   ];
 
-  const conditionsArray = devideConditions(rentalConditions);
+  const conditionsArray = [
+    ...devideConditions(rentalConditions),
+    `Mileage: ${numbro(mileage).format({ thousandSeparated: true })}`,
+    `Price: ${rentalPrice}`,
+  ];
   return (
     <AdvertInfoContainer>
       <AdvertCardImage

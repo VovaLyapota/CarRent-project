@@ -12,20 +12,22 @@ const modalRoot = document.querySelector('#modal-root');
 
 export function BasicModal({ isOpen, closeModal, children }) {
   useEffect(() => {
-    const handleEsc = event => {
-      if (event.key === 'Escape') {
+    const handleClose = event => {
+      if (event.key === 'Escape' || event.target.id === 'modal-overlay') {
         closeModal();
       }
     };
 
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', handleEsc);
+      document.addEventListener('keydown', handleClose);
+      document.addEventListener('click', handleClose);
     }
 
     return () => {
       document.body.style.overflow = '';
-      document.removeEventListener('keydown', handleEsc);
+      document.removeEventListener('keydown', handleClose);
+      document.removeEventListener('click', handleClose);
     };
   }, [isOpen, closeModal]);
 
@@ -33,7 +35,7 @@ export function BasicModal({ isOpen, closeModal, children }) {
     <>
       {isOpen &&
         createPortal(
-          <ModalOverlay>
+          <ModalOverlay id="modal-overlay">
             <ModalContainer>
               <CloseButtonContainer onClick={closeModal}>
                 <img src={closeIcon} alt="close" />

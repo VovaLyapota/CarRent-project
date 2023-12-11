@@ -17,7 +17,7 @@ export const ConditionItem = styled.li`
   justify-content: center;
   align-items: center;
   padding: 7px 14px;
-  gap: 10px;
+  gap: 3px;
 
   border-radius: 35px;
   background: #f9f9f9;

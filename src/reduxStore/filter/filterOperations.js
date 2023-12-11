@@ -2,9 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const addFilters = createAsyncThunk(
   'filters/addFilters',
-  async (filtersObj, thunkAPI) => {
+  async (filters, thunkAPI) => {
     try {
-      return filtersObj;
+      return filters;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

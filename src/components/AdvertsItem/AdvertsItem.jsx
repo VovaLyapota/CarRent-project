@@ -23,7 +23,6 @@ export const AdvertsItem = ({ advertData }) => {
   const isFavoriteAdvert = favorites.some(car => car.id === advertData.id);
 
   const toggleModal = () => {
-    console.log('i work');
     setIsOpen(prev => !prev);
   };
   const toggleFavorite = () =>

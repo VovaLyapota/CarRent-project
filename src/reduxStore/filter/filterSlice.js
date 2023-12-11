@@ -7,7 +7,7 @@ export const filtersSlice = createSlice({
 
   extraReducers: builder => {
     builder.addCase(addFilters.fulfilled, (state, action) => {
-      state.items = action.payload;
+      return action.payload;
     });
   },
 });

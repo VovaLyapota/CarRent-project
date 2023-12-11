@@ -13,7 +13,7 @@ import { CustomSelect } from 'components/CustomSelect';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAdverts } from 'reduxStore/adverts';
 import { useEffect } from 'react';
-import { selectFilters } from 'reduxStore/filter';
+import { addFilters, selectFilters } from 'reduxStore/filter';
 
 export const FilterForm = () => {
   const dispatch = useDispatch();
@@ -42,7 +42,9 @@ export const FilterForm = () => {
         const isNewRequest = filters.brand !== brand;
         isNewRequest ? (page = 1) : (page += 1);
 
+        dispatch(addFilters(values));
         dispatch(fetchAdverts({ brand, page, isNewRequest }));
+
         actions.resetForm();
       }}
     >
