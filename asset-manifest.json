@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CarRent-project/static/css/main.ce395160.css",
-    "main.js": "/CarRent-project/static/js/main.c8da1c36.js",
+    "main.js": "/CarRent-project/static/js/main.1e0d45ac.js",
     "static/media/Montserrat-SemiBold.ttf": "/CarRent-project/static/media/Montserrat-SemiBold.93b37a465fc4ec0d0415.ttf",
     "static/media/Montserrat-Regular.ttf": "/CarRent-project/static/media/Montserrat-Regular.24785cc015b27a3e964b.ttf",
     "static/media/heroBg_img.jpg": "/CarRent-project/static/media/heroBg_img.fd52e756b433e8df659c.jpg",
@@ -9,12 +9,14 @@
     "static/media/Manrope-Medium.ttf": "/CarRent-project/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Regular.ttf": "/CarRent-project/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
     "index.html": "/CarRent-project/index.html",
+    "static/media/favoriteAddIcon.svg": "/CarRent-project/static/media/favoriteAddIcon.282d936f414f4c6884ab9306a91dad67.svg",
+    "static/media/activeFavoriteIcon.svg": "/CarRent-project/static/media/activeFavoriteIcon.97847e9195943f61800c97807e735d4f.svg",
     "static/media/selectIcon.svg": "/CarRent-project/static/media/selectIcon.24cd320d509ea2ebbeb4265f8030bafb.svg",
     "main.ce395160.css.map": "/CarRent-project/static/css/main.ce395160.css.map",
-    "main.c8da1c36.js.map": "/CarRent-project/static/js/main.c8da1c36.js.map"
+    "main.1e0d45ac.js.map": "/CarRent-project/static/js/main.1e0d45ac.js.map"
   },
   "entrypoints": [
     "static/css/main.ce395160.css",
-    "static/js/main.c8da1c36.js"
+    "static/js/main.1e0d45ac.js"
   ]
 }
