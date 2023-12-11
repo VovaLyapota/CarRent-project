@@ -56,4 +56,7 @@ export const AdvertShortDataText = styled.p`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
+
+  max-height: 40px;
+  overflow-y: hidden;
 `;
