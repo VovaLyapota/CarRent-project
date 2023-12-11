@@ -42,7 +42,6 @@ Compiled successfully!
 You can now view carrent-project in the browser.
 
   Local:            http://localhost:3000/CarRent-project
-  On Your Network:  http://192.168.0.171:3000/CarRent-project
 
 Note that the development build is not optimized.
 To create a production build, use npm run build.
