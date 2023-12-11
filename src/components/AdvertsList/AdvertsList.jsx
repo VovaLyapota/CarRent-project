@@ -10,8 +10,6 @@ export const AdvertsList = ({ cars }) => {
   return (
     <AdvertsContainer>
       {cars.map(car => {
-        console.log('filters: ', filters);
-
         return (
           shouldShowCar(
             {
