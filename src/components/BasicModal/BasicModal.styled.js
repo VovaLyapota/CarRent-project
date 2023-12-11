@@ -25,7 +25,6 @@ export const ModalContainer = styled.div`
   position: relative;
 
   width: 541px;
-  height: 552px;
 
   border-radius: 24px;
   background-color: #fff;
@@ -53,5 +52,5 @@ export const CloseButtonContainer = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  padding: 40px;
+  padding: 32px;
 `;

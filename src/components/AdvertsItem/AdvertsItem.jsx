@@ -1,16 +1,7 @@
 import { CustomButton } from 'components/CustomButton';
 import addFavoriteIcon from 'images/svg/favoriteAddIcon.svg';
 import activeFavoriteIcon from 'images/svg/activeFavoriteIcon.svg';
-import {
-  AdvertContainer,
-  AdvertImage,
-  AdvertImageContainer,
-  AdvertModelText,
-  AdvertShortDataText,
-  AdvertTitleContainer,
-  AdvertTitleText,
-  FavoriteIconContainer,
-} from './AdvertsItem.styled';
+import { AdvertContainer, FavoriteIconContainer } from './AdvertsItem.styled';
 import { formatAddress } from 'utils/formatAddress';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -20,6 +11,10 @@ import {
 } from 'reduxStore/favorites';
 import { BasicModal } from 'components/BasicModal';
 import { useState } from 'react';
+import { AdvertCardTitle } from 'components/AdvertCardTitle';
+import { AdvertCardImage } from 'components/AdvertCardImage';
+import { AdvertShortDataText } from 'components/AdvertShortDataText';
+import { AdvertInfo } from 'components/AdvertInfo';
 
 export const AdvertsItem = ({ advertData }) => {
   const favorites = useSelector(selectFavorites);
@@ -40,8 +35,7 @@ export const AdvertsItem = ({ advertData }) => {
 
   return (
     <AdvertContainer>
-      <AdvertImageContainer>
-        <AdvertImage src={advertData.img} alt={advertData.model} />
+      <AdvertCardImage image={advertData.img} model={advertData.model}>
         <FavoriteIconContainer onClick={toggleFavorite}>
           {isFavoriteAdvert ? (
             <img src={activeFavoriteIcon} alt="remove" />
@@ -49,31 +43,31 @@ export const AdvertsItem = ({ advertData }) => {
             <img src={addFavoriteIcon} alt="add" />
           )}
         </FavoriteIconContainer>
-      </AdvertImageContainer>
+      </AdvertCardImage>
 
-      <AdvertTitleContainer>
-        <AdvertTitleText>
-          {advertData.make}{' '}
-          <AdvertModelText>{advertData.model}</AdvertModelText>,{' '}
-          {advertData.year}
-        </AdvertTitleText>
-        <AdvertTitleText>{advertData.rentalPrice}</AdvertTitleText>
-      </AdvertTitleContainer>
-      <AdvertShortDataText>
-        {[
+      <AdvertCardTitle
+        make={advertData.make}
+        year={advertData.year}
+        model={advertData.model}
+        price={advertData.rentalPrice}
+      />
+      <AdvertShortDataText
+        infoArray={[
           ...formatAddress(advertData.address),
           advertData.rentalCompany,
           advertData.model,
           advertData.id,
           advertData.functionalities[0],
-        ].join(' | ')}
-      </AdvertShortDataText>
+        ]}
+      />
       <CustomButton
         text="Learn more"
         handleClick={toggleModal}
         adsStyles="width: 100%; "
       />
-      <BasicModal isOpen={isOpen} closeModal={toggleModal}></BasicModal>
+      <BasicModal isOpen={isOpen} closeModal={toggleModal}>
+        <AdvertInfo advertData={advertData} />
+      </BasicModal>
     </AdvertContainer>
   );
 };
