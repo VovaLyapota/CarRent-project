@@ -1,5 +1,5 @@
 export const formatAddress = address => {
-  const [street, city, country] = address.split(',').map(part => part.trim());
+  const addressArray = address.split(',').map(part => part.trim());
 
-  return [city, country];
+  return addressArray.slice(1);
 };
