@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const SelectContainer = styled.div`
   position: relative;
-  z-index: 999;
+  z-index: 777;
 
   display: flex;
   padding: 14px 18px;

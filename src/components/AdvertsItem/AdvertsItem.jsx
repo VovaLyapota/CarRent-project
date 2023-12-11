@@ -18,27 +18,31 @@ import {
   removeFavoriteAdvert,
   selectFavorites,
 } from 'reduxStore/favorites';
+import { BasicModal } from 'components/BasicModal';
+import { useState } from 'react';
 
 export const AdvertsItem = ({ advertData }) => {
   const favorites = useSelector(selectFavorites);
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const isFavoriteAdvert = favorites.some(car => car.id === advertData.id);
 
-  const openModal = () => {};
+  const toggleModal = () => {
+    console.log('i work');
+    setIsOpen(prev => !prev);
+  };
+  const toggleFavorite = () =>
+    dispatch(
+      isFavoriteAdvert
+        ? removeFavoriteAdvert(advertData.id)
+        : addFavoriteAdvert(advertData)
+    );
 
   return (
     <AdvertContainer>
       <AdvertImageContainer>
         <AdvertImage src={advertData.img} alt={advertData.model} />
-        <FavoriteIconContainer
-          onClick={() =>
-            dispatch(
-              isFavoriteAdvert
-                ? removeFavoriteAdvert(advertData.id)
-                : addFavoriteAdvert(advertData)
-            )
-          }
-        >
+        <FavoriteIconContainer onClick={toggleFavorite}>
           {isFavoriteAdvert ? (
             <img src={activeFavoriteIcon} alt="remove" />
           ) : (
@@ -66,9 +70,10 @@ export const AdvertsItem = ({ advertData }) => {
       </AdvertShortDataText>
       <CustomButton
         text="Learn more"
-        handleClick={openModal}
+        handleClick={toggleModal}
         adsStyles="width: 100%; "
       />
+      <BasicModal isOpen={isOpen} closeModal={toggleModal}></BasicModal>
     </AdvertContainer>
   );
 };
