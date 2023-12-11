@@ -1,15 +1,11 @@
-import { useSelector } from 'react-redux';
 import { AdvertsContainer } from './AdvertsList.styled';
-import { selectAdverts } from 'reduxStore/adverts';
 import { AdvertsItem } from 'components/AdvertsItem';
 
-export const AdvertsList = () => {
-  const adverts = useSelector(selectAdverts);
-
+export const AdvertsList = ({ cars }) => {
   return (
     <AdvertsContainer>
-      {adverts.map(advert => (
-        <AdvertsItem advertData={advert} key={advert.id} />
+      {cars.map(car => (
+        <AdvertsItem advertData={car} key={car.id} />
       ))}
     </AdvertsContainer>
   );

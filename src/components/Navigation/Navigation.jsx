@@ -7,7 +7,7 @@ export const Navigation = () => {
       <NavigationList>
         <NavItem name="Home" path="/" />
         <NavItem name="Rent" path="/catalog" />
-        <NavItem name="Favorite" path="/favorites" />
+        <NavItem name="Favorites" path="/favorites" />
       </NavigationList>
     </NavigationContainer>
   );

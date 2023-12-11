@@ -9,12 +9,9 @@ export const favoritesSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(addFavoriteAdvert.fulfilled, (state, action) => {
-        console.log(action);
-
         state.items = [action.payload, ...state.items];
       })
       .addCase(removeFavoriteAdvert.fulfilled, (state, action) => {
-        console.log(action);
         state.items = state.items.filter(car => car.id !== action.payload);
       });
   },

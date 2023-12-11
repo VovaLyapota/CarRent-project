@@ -6,17 +6,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAdverts, selectAdverts } from 'reduxStore/adverts';
 
 export const CatalogSection = () => {
-  const adverts = useSelector(selectAdverts);
   const ADVERTS_QUANTITY = 32;
   const PER_PAGE = 12;
+
+  const adverts = useSelector(selectAdverts);
+  const dispatch = useDispatch();
+
   const shouldLoadMore =
     PER_PAGE <= adverts.length && adverts.length < ADVERTS_QUANTITY;
-  const dispatch = useDispatch();
+
   return (
     <section>
       <MainContainer>
         <FilterForm />
-        <AdvertsList />
+        <AdvertsList cars={adverts} />
         {shouldLoadMore && (
           <CustomButton
             text="Load More"
