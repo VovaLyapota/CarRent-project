@@ -5,6 +5,7 @@ export const AdvertContainer = styled.li`
 `;
 
 export const AdvertImageContainer = styled.div`
+  position: relative;
   margin-bottom: 14px;
 
   width: 100%;
@@ -28,7 +29,24 @@ export const AdvertImage = styled.img`
   object-fit: cover;
 `;
 
-export const FavoriteIconContainer = styled.div``;
+export const FavoriteIconContainer = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  opacity: 0.85;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+`;
 
 export const AdvertTitleContainer = styled.h3`
   display: flex;

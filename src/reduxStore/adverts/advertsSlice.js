@@ -17,8 +17,6 @@ export const advertsSlice = createSlice({
         const carsArray = action.payload.data;
         state.isLoading = false;
         state.error = null;
-        console.log('state.items: ', state.items);
-        console.log('action.payload: ', action.payload);
 
         state.items = action.payload.isNewRequest
           ? carsArray

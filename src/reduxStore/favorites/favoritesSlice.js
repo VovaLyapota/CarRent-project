@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addFavoriteAdvert } from './favoritesOperations';
+import { addFavoriteAdvert, removeFavoriteAdvert } from './favoritesOperations';
 
 export const favoritesSlice = createSlice({
   name: 'favorites',
@@ -7,9 +7,16 @@ export const favoritesSlice = createSlice({
     items: [],
   },
   extraReducers: builder => {
-    builder.addCase(addFavoriteAdvert.fulfilled, (state, action) => {
-      state.items = [...action.payload, ...state.items];
-    });
+    builder
+      .addCase(addFavoriteAdvert.fulfilled, (state, action) => {
+        console.log(action);
+
+        state.items = [action.payload, ...state.items];
+      })
+      .addCase(removeFavoriteAdvert.fulfilled, (state, action) => {
+        console.log(action);
+        state.items = state.items.filter(car => car.id !== action.payload);
+      });
   },
 });
 
